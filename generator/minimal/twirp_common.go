@@ -35,6 +35,7 @@ export const createTwirpRequest = (url: string, body: object): Request => {
         headers: {
             "Content-Type": "application/json"
         },
+        credentials: 'include',
         body: JSON.stringify(body)
     });
 };

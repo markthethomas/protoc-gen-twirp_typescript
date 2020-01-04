@@ -8,11 +8,11 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/markthethomas/protoc-gen-twirp_typescript/example"
 	"github.com/rs/cors"
 
 	"github.com/golang/protobuf/ptypes"
 	"github.com/twitchtv/twirp"
-	"go.larrymyers.com/protoc-gen-twirp_typescript/example"
 )
 
 type randomHaberdasher struct{}

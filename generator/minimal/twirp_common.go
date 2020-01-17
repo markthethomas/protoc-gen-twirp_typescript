@@ -29,14 +29,17 @@ export const throwTwirpError = (resp: Response) => {
     return resp.json().then((err: TwirpErrorJSON) => { throw new TwirpError(err); })
 };
 
-export const createTwirpRequest = (url: string, body: object): Request => {
+export const createTwirpRequest = (url: string, body: object, headers: object): Request => {
+    const h = Object.assign(
+        {}, 
+        { "Content-Type": "application/json" }, 
+        headers
+    );
     return new Request(url, {
         method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
         credentials: 'include',
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
+        headers: h
     });
 };
 
